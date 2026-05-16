@@ -56,7 +56,7 @@ ClientAliveCountMax 2
 
 LogLevel VERBOSE
 EOF
-sshd -t && systemctl restart ssh
+sshd -t && systemctl restart sshd
 
 public_ip=$(curl -s 'https://checkip.amazonaws.com')
 

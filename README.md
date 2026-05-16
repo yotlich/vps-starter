@@ -2,6 +2,8 @@
 
 ## Requirements
 
+Debian LTS
+
 ### Update system
 
 ```bash
@@ -13,6 +15,8 @@ apt-get update -y && apt-get dist-upgrade -y
 ```bash
 apt-get install -y nano curl ufw
 ```
+
+> Reboot VPS
 
 ## Setup SSH
 
@@ -41,8 +45,15 @@ bash <(curl -Ls https://raw.githubusercontent.com/yotlich/vps-starter/main/scrip
 ```bash
 ufw default deny incoming
 ufw default allow outgoing
-ufw allow $(grep Port /etc/ssh/sshd_config.d/hardened.conf | awk '{print $2}')/tcp
+ufw allow "$(sudo sshd -T | grep '^port' | awk '{print $2}')/tcp"
 ufw enable
+
+```
+
+## Check rules
+
+```bash
+ufw status verbose
 ```
 
 > Reconnect with saved credentials
