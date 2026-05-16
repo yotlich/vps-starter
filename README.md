@@ -20,6 +20,11 @@ apt-get install -y nano curl ufw
 
 ```bash
 ssh-keygen -t ed25519
+```
+
+### Copy pubkey on host
+
+```bash
 cat ~/.ssh/id_ed25519.pub | wl-copy -n
 ```
 
