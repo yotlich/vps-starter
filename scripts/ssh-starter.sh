@@ -3,11 +3,11 @@ set -euo pipefail
 
 gen_username() {
 	# shellcheck disable=SC2018
-	tr -dc 'a-z' </dev/urandom | head -c 8
+	tr -dc 'a-z' </dev/urandom | head -c 8 || true
 }
 
 gen_password() {
-	tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32
+	tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32 || true
 }
 
 prp_pass() {
