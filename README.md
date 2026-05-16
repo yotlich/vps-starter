@@ -42,6 +42,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/yotlich/vps-starter/main/scrip
 
 ## Setup UFW
 
+### Enable rules
+
 ```bash
 ufw default deny incoming
 ufw default allow outgoing
@@ -50,7 +52,7 @@ ufw enable
 
 ```
 
-## Check rules
+### Check rules
 
 ```bash
 ufw status verbose
